@@ -1,0 +1,7 @@
+Support for ROOTMpi,
+the enviroment variables will be exported for ROOTMpi
+from the API.
+
+SLURM_JOBID -> ROOT_JOBID (rank in mpi)
+SLURM_NODELIST -> ROOT_NODELIST (can be collected throw  MPI_Get_processor_name)
+

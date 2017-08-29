@@ -186,6 +186,19 @@ char* scr_env_jobid()
       }
     }
   #endif
+  #ifdef SCR_RESOURCE_MANAGER_ROOT
+    /* read $ROOT_JOBID environment variable for jobid string 
+     * this will be exported by ROOTMpi
+     */
+    if ((value = getenv("ROOT_JOBID")) != NULL) {
+      jobid = strdup(value);
+      if (jobid == NULL) {
+        scr_err("Failed to allocate memory to record jobid (%s) @ %s:%d",
+                value, __FILE__, __LINE__
+        );
+      }
+    }
+  #endif
 
   return jobid;
 }

@@ -38,6 +38,10 @@ IF(${SCR_RESOURCE_MANAGER} STREQUAL "LSF")
 	SET(cliscr_run_name "scr_srun")
 ENDIF(${SCR_RESOURCE_MANAGER} STREQUAL "LSF")
 
+IF(${SCR_RESOURCE_MANAGER} STREQUAL "ROOT")
+	SET(cliscr_dir_name "ROOT")
+	SET(cliscr_run_name "scr_srun")
+ENDIF(${SCR_RESOURCE_MANAGER} STREQUAL "ROOT")
 
 IF(${SCR_RESOURCE_MANAGER} STREQUAL "NONE")
 	MESSAGE("No resource manager selected. Some of the SCR command line interface will not be built.")
