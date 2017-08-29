@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+
+# TODO: ROOT notes - this script is only used when launching the watchdog process.  Have not tested this
+
+
+my $pid=$ARGV[0];
+my $user=`scr_env -u`;
+chomp($user);
+my $jobid=`scr_env -j`;
+chomp($jobid);
+
+my $cmd="";
+
+my @output=`$cmd`;
+
+my $currjobid=-1; # the return value will be -1 if not found
+
+print "$currjobid\n";
+
+exit 0;
+
